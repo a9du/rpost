@@ -1,0 +1,33 @@
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    
+ html, body{
+    height:100%;
+   
+}
+
+.header{
+   box-shadow: 0 4px 5px #666666;
+}
+
+.row{
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    flex: 1 1 auto;
+}
+
+.card_content{
+    display: inline-block;
+    width: 100%;
+}
+
+.col-lg-4{
+    -ms-flex:0 0 33.333333% !important;
+    flex:0 0 33.333333% !important;
+    max-width: 33.33333%;
+}
+ .ie_block{
+    display: block !important;
+} 
+ }

@@ -1,0 +1,184 @@
+/* Header script start */
+
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70 && window.innerWidth > 1024) {
+        document.getElementById("header_top").style.display = "none";
+        document.getElementById("logo1").style.display = "inline-block";
+        // document.getElementById("logo2").style.display = "inline-block";
+        // document.getElementById("spacer").style.display = "inline-block";
+        document.getElementById("header-main").classList.add('menu_special');
+
+    } else {
+        document.getElementById("header_top").style.display = "block";
+        document.getElementById("logo1").style.display = "none";
+        // document.getElementById("logo2").style.display = "none";
+        // document.getElementById("spacer").style.display = "none";
+        document.getElementById("header-main").classList.remove('menu_special');
+    }
+}
+
+/* Header script end */
+
+
+/* content card script start */
+
+function navigateLink(url) {
+    var url_Link = url.getAttribute("data-link");
+    location.href = url_Link;
+}
+
+function navigateLinkNewTab(url) {
+    var url_Link = url.getAttribute("data-link");
+    location.href = window.open(url_Link);
+}
+
+
+/* content card script end */
+
+
+/* Top scroll */
+
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 400) {
+            $('.scroll-top').fadeIn();
+        } else {
+            $('.scroll-top').fadeOut();
+        }
+    });
+
+    $('.scroll-top').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+
+/* Top scroll end*/
+
+
+/* Search */
+
+// Code By Webdevtrick ( https://webdevtrick.com )
+$(document).ready(function () {
+    var submitIcon = $('.searchbox-icon');
+    var inputBox = $('.searchbox-input');
+    var searchBox = $('.searchbox');
+    var isOpen = false;
+    submitIcon.click(function () {
+        if (isOpen == false) {
+            searchBox.addClass('searchbox-open');
+            inputBox.focus();
+            isOpen = true;
+        } else {
+            searchBox.removeClass('searchbox-open');
+            inputBox.focusout();
+            isOpen = false;
+        }
+    });
+    submitIcon.mouseup(function () {
+        return false;
+    });
+    searchBox.mouseup(function () {
+        return false;
+    });
+    $(document).mouseup(function () {
+        if (isOpen == true) {
+            $('.searchbox-icon').css('display', 'block');
+            submitIcon.click();
+        }
+    });
+});
+function buttonUp() {
+    var inputVal = $('.searchbox-input').val();
+    inputVal = $.trim(inputVal).length;
+    if (inputVal !== 0) {
+        $('.searchbox-icon').css('display', 'none');
+    } else {
+        $('.searchbox-input').val('');
+        $('.searchbox-icon').css('display', 'block');
+    }
+}
+
+
+/* Side Menu */
+
+function showSideMenu() {
+    if (window.innerWidth < 992) {
+        var x = document.getElementById("Prodcut_menu");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    else {
+        document.getElementById("Prodcut_menu"), display = "block";
+    }
+}
+
+
+
+// $(document).ready(() => {
+//     let url = location.href.replace(/\/$/, "");
+
+//     if (location.hash) {
+//         const hash = url.split("#");
+//         $('#myTab a[href="#' + hash[1] + '"]').tab("show");
+//         url = location.href.replace(/\/#/, "#");
+//         history.replaceState(null, null, url);
+//         setTimeout(() => {
+//             $(window).scrollTop(0);
+//         }, 400);
+//     }
+
+//     $('a[data-toggle="tab"]').on("click", function () {
+//         let newUrl;
+//         const hash = $(this).attr("href");
+//         if (hash == "#Home") {
+//             newUrl = url.split("#")[0];
+//         } else {
+//             newUrl = url.split("#")[0] + hash;
+//         }
+//         newUrl += "/";
+//         history.replaceState(null, null, newUrl);
+//     });
+// });
+
+
+jQuery(document).ready(function ($) {
+    var url = window.location.href;
+    if (url.indexOf("#") > 0) {
+        var activeTab = url.substring(url.indexOf("#") + 1);
+        $('.nav[role="tablist"] a[href="#' + activeTab + '"]').tab('show');
+        // setTimeout(() => {
+        //     $(window).scrollTop(0);
+        // }, 400);
+    }
+
+    $('a[role="tab"]').on("click", function () {
+        var newUrl;
+        const hash = $(this).attr("href");
+        newUrl = url.split("#")[0] + hash;
+        history.replaceState(null, null, newUrl);
+    });
+});
+
+
+
+
+// $(document).ready(function () {
+//     $("#owl-demo").owlCarousel({
+
+//         navigation: true,
+//         autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+//         items: 4,
+//         itemsDesktop: [1199, 3],
+//         itemsDesktopSmall: [979, 3]
+
+//     });
+ //})

@@ -1,0 +1,87 @@
+/* Animation */
+
+.bottom-to-top {
+    -webkit-animation: rpost-btt 0.8s 1 cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    animation: rpost-btt 0.8s 1 cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    opacity: 1;
+}
+
+.product_page{ margin-top: -470px;}
+
+.our_manifesto { margin-top: -470px; }
+
+.manifesto_section{ max-width: 1250px; background-color: #fff; margin: 0px auto; z-index: 2; position: relative;}
+
+.apps_tile_space{
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .sucess_stories h1{
+        font-size: 35px;
+        line-height: 52px;
+        letter-spacing: 1px;
+    }
+    .app_slider{ display: none !important;}
+    
+}
+ 
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .sucess_stories h1{
+        font-size: 35px;
+        line-height: 52px;
+        letter-spacing: 1px;
+    }
+
+    .product_page{ margin-top: -510px;}
+
+  
+
+  
+}
+ 
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+   
+    .product_page{ margin-top: -510px;}
+
+    .products h1{
+        font-size: 48px;
+        line-height: 52px;
+        letter-spacing: 1px;
+    }
+
+    .sidebar{max-height: 365px;}
+}
+ 
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+    .sidebar{max-height: 450px;}
+
+    .apps_tile_space{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+ 
+/* Media Query for Large screens */
+@media (min-width: 1281px) and (max-width: 1400px) {
+   
+}
+
+/* Media Query for xtra Large screens */
+@media (min-width: 1401px) {
+
+    .app_slider div img{
+        width: 100% !important;
+        max-height:600px !important;
+    }
+
+    
+    
+   
+}
